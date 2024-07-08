@@ -627,7 +627,7 @@ void WiFiManager::setupHTTPServer(){
     #endif
   }
 
-  server.reset(new WM_WebServer(_httpPort));
+  server.reset(new WM_WebServer(WiFi.softAPIP(), _httpPort));
   // This is not the safest way to reset the webserver, it can cause crashes on callbacks initilized before this and since its a shared pointer...
 
   if ( _webservercallback != NULL) {
