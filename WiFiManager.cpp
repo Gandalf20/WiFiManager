@@ -3737,11 +3737,7 @@ bool WiFiManager::WiFi_eraseConfig() {
 }
 
 uint8_t WiFiManager::WiFi_softap_num_stations(){
-  #ifdef ESP8266
-    return wifi_softap_get_station_num();
-  #elif defined(ESP32)
     return WiFi.softAPgetStationNum();
-  #endif
 }
 
 bool WiFiManager::WiFi_hasAutoConnect(){
